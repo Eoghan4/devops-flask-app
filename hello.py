@@ -8,7 +8,7 @@ def say_hello():
 
 @app. route("/about")
 def say_about():
-	return "<p>About!</p> <a href='/'>Home</a>"
+	return "<p>About!</p> <a href='/'>Home</a><br><a href=\"https://www.python.org/\">Pytohn website</a>"
 
 @app. route("/contact")
 def say_contact():
