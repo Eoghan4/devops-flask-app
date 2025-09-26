@@ -12,4 +12,4 @@ def say_about():
 
 @app. route("/contact")
 def say_contact():
-        return "<p>Contact!</p> <a href='/'>Home</a>"
+        return "<p>Contact! C23362336@mytudublin.ie</p> <a href='/'>Home</a>"
