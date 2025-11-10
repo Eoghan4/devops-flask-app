@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: app-deployment
+spec:
+  # Ensure we have 5 replicas running
+  replicas: 5
+  selector:
+    matchLabels:
+      app: flaskapp
+  template:
+    metadata:
+      labels:
+        app: flaskapp
+    spec:
+      containers:
+      - name: flaskapp-container
+        image: my_flask_image
+        imagePullPolicy: Never
+        # --- MISSING FIXES START HERE ---
+        # 1. Command to start the Python Flask app
+        command: ["python"]
+        args: ["hello.py"]
+        # 2. Expose the port the Flask app runs on
+        ports:
+        - containerPort: 5000
+        # --- MISSING FIXES END HERE ---
